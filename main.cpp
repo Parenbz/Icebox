@@ -9,6 +9,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
 //    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL", "Freezer");
 //    db.setHostName("127.0.0.1");
 //    db.setPort(3306);

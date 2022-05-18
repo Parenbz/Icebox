@@ -27,17 +27,13 @@ Tmp::~Tmp()
 
 void Tmp::connectAttempt() {
     QString hostName = ui->hostNameEdit->text();
-    int port = ui->portEdit->text().toInt();
-    QString databaseName = ui->databaseNameEdit->text();
-    QString userName = ui->userNameEdit->text();
-    QString password = ui->passwordEdit->text();
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL", "Freezer");
     db.setHostName(hostName);
-    db.setPort(port);
-    db.setDatabaseName(databaseName);
-    db.setUserName(userName);
-    db.setPassword(password);
+    db.setPort(3306);
+    db.setDatabaseName("icebox");
+    db.setUserName("client");
+    db.setPassword("userpassword123");
     bool ok = db.open();
     if (ok) {
         parent->setDB();
