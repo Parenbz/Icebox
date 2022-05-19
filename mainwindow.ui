@@ -45,7 +45,7 @@
      <number>0</number>
     </property>
     <widget class="QWidget" name="mainPage">
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>40</x>
@@ -88,17 +88,28 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="goToAddFoodButton">
-         <property name="text">
-          <string>Добавить Еду</string>
-         </property>
-        </widget>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QPushButton" name="deleteFoodButton">
+           <property name="text">
+            <string>Удалить еду</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="goToAddFoodButton">
+           <property name="text">
+            <string>Добавить Еду</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
       </layout>
      </widget>
     </widget>
     <widget class="QWidget" name="addFoodPage">
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>238</x>

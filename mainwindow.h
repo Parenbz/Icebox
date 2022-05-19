@@ -31,6 +31,10 @@ public slots:
 
     void addFood();
 
+    void deleteFood();
+
+    bool checkExpireDate(int foodId);
+
     //Переходы по страницам
     void goToMainPage();
     void goToAddFoodPage();
