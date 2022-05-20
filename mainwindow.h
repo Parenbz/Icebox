@@ -3,8 +3,8 @@
 
 #include <QMainWindow>
 #include <QSqlDatabase>
-#include <QSqlQueryModel>
 #include <QSqlTableModel>
+#include <QSqlQueryModel>
 
 class Login;
 
@@ -27,17 +27,25 @@ public slots:
 
     void setApartId(int id);
 
-    void fillFood(int id);
+    void fillFood();
+
+    void fillAvailableDishes();
+    void fillLendDishes();
+    void fillUnavailableDishes();
+
+    void fillRecipeDetail(int idDish);
+
+    void listOfAparts(const QModelIndex &ind);
 
     void addFood();
 
     void deleteFood();
 
-    bool checkExpireDate(int foodId);
-
     //Переходы по страницам
     void goToMainPage();
     void goToAddFoodPage();
+    void goToRecipesPage();
+    void goToRecipeDetailPage(const QModelIndex &ind);
 
 signals:
 
@@ -48,7 +56,11 @@ private:
     Login *loginWindow;
     int apartId;
     QSqlDatabase db;
-    QSqlQueryModel *foodModel;       //products.name, food.date_manuf, food.product_id
+    QSqlTableModel *foodModel;       //products.name, food.date_manuf, food.product_id
     QSqlTableModel *products;
+    QSqlTableModel *availableDishesModel;
+    QSqlTableModel *lendDishesModel;
+    QSqlTableModel *unavailableDishesModel;
+    QSqlQueryModel *recipeDetailModel;
 };
 #endif // MAINWINDOW_H
